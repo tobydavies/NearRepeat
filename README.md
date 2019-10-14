@@ -1,6 +1,6 @@
 # NearRepeat
 
-Python code to perform analysis of space-time clustering within event data, primarily for application to crime data. Currently limited to an implementation of the Knox test for spatio-temporal association, as implemented in Jerry Ratcliffe's Near Repeat Calculator.
+Python code to perform analysis of space-time clustering within event data, primarily for application to crime data. Currently limited to an implementation of the Knox test for spatio-temporal association, equivalent to that implemented in Jerry Ratcliffe's [Near Repeat Calculator](http://www.cla.temple.edu/center-for-security-and-crime-science/projects/#near-repeat-calculator).
 
 A number of [notebooks](notebooks) are provided to demonstrate the implementation:
 
