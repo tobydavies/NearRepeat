@@ -1,0 +1,4 @@
+.DS_Store
+.ipynb*
+__pycache__
+crime_open_database_core*
