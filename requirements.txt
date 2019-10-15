@@ -2,3 +2,7 @@ numpy
 pandas
 scipy
 scikit-learn
+
+# For notebooks only
+matplotlib
+pyproj
