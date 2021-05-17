@@ -124,13 +124,14 @@ def knox_test(xy, t, s_bands, t_bands, n_iter, metric="euclidean", interval_side
     conting_perm = np.zeros((s_shape, t_shape, n_iter), dtype=np.float64)
     
     # Define index for shuffling
-    index = np.arange(xy.shape[0])
+    perm = np.arange(xy.shape[0])
     for k in range(n_iter):
         # Shuffle the indices
-        np.random.shuffle(index)
+        np.random.shuffle(perm)
+        perm_inv = np.argsort(perm)
         # Apply shuffle to spatial distance matrix (in CSR form)
-        s_pairs_shuff = s_pairs[index, :]
-        s_pairs_shuff.indices = index[s_pairs_shuff.indices]
+        s_pairs_shuff = s_pairs[perm, :]
+        s_pairs_shuff.indices = perm_inv[s_pairs_shuff.indices]
         # Compute contingency for shuffled data and add to master array
         this_conting_perm = compute_contingency(s_pairs_shuff, t_pairs, s_bands, t_bands)
         conting_perm[:,:,k] = this_conting_perm
